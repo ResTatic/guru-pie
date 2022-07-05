@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import { Card } from './components/Card'
+import { PieChart } from './components/PieChart'
+import { expenses } from './data/expenses'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello Expo!</Text>
+      <Card>
+        <PieChart expenses={expenses}></PieChart>
+      </Card>
       <StatusBar style="auto" />
     </View>
   )
@@ -12,12 +17,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    padding: 16,
+
     backgroundColor: '#000',
-    alignItems: 'center',
+
+    flex: 1,
+    flexDirection: 'column',
     justifyContent: 'center',
-  },
-  text: {
-    color: '#fff',
+    alignItems: 'center',
   },
 })
